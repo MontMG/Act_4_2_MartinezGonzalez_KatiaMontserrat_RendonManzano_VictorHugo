@@ -1,48 +1,43 @@
 :root {
-    --uaslp-azul: #004A98;
-    --uaslp-azul-claro: #D3E9FF;
-    --uaslp-dorado: #D4AF37;
-    --fondo-app: #F4F6F9;
-    --texto-oscuro: #1E293B;
+    --azul-marino: #2B4C7E;
+    --azul-boton: #6A99D8;
+    --azul-boton-hover: #5381C0;
+    --gris-navbar: #D9D9D9;
+    --gris-fondo: #F5F6F8;
+    --gris-borde: #CCCCCC;
+    --verde-estado: #D8F5C3;
+    --gris-pendiente: #BDBDBD;
+    --texto-oscuro: #222222;
+    --texto-secundario: #555555;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-    background-color: var(--fondo-app);
+    background-color: var(--gris-fondo);
     color: var(--texto-oscuro);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    height: 100vh;
 }
 
-/* Contenedor debajo de la barra superior */
-.layout-principal {
-    display: flex;
+.contenedor-principal {
     flex: 1;
-    overflow: hidden;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 25px 30px;
 }
 
-/* Panel principal con margen interior de 10px según diseño */
-.panel-contenido {
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-/* Cuadrícula de widgets de 65x65px */
-.grid-widgets {
-    display: grid;
-    grid-template-columns: repeat(4, 65px);
-    gap: 12px;
-    justify-content: center;
-    margin-top: 10px;
+.panel-blanco {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
 }

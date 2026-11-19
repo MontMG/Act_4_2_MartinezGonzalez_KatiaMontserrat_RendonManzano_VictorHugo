@@ -4,33 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UASLP</title>
+    <title>Portal Académico Estudiantil - UASLP</title>
     <link rel="stylesheet" href="styles/global.css">
 </head>
 
 <body>
-    <top-navbar></top-navbar>
+    <portal-header></portal-header>
+    <portal-navbar activo="inicio"></portal-navbar>
 
-    <div class="layout-principal">
-        <side-menu></side-menu>
+    <main class="contenedor-principal">
+        <div class="panel-blanco">
+            <p>Estructura base del Portal Académico en construcción...</p>
+        </div>
+    </main>
 
-        <main class="panel-contenido">
-            <section class="grid-widgets">
-                <widget-acceso icono="" titulo="Notas"></widget-acceso>
-                <widget-acceso icono="" titulo="Horario"></widget-acceso>
-                <widget-acceso icono="" titulo="Avisos"></widget-acceso>
-                <widget-acceso icono="" titulo="Tareas"></widget-acceso>
-                <widget-acceso icono="" titulo="Profes"></widget-acceso>
-                <widget-acceso icono="" titulo="Kardex"></widget-acceso>
-                <widget-acceso icono="" titulo="Pagos"></widget-acceso>
-                <widget-acceso icono="" titulo="Ajustes"></widget-acceso>
-            </section>
-        </main>
-    </div>
-
-    <script type="module" src="components/top-navbar.js"></script>
-    <script type="module" src="components/side-menu.js"></script>
-    <script type="module" src="components/widget-acceso.js"></script>
+    <script type="module" src="components/portal-header.js"></script>
+    <script type="module" src="components/portal-navbar.js"></script>
 </body>
 
 </html>
