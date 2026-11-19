@@ -1,0 +1,48 @@
+:root {
+    --uaslp-azul: #004A98;
+    --uaslp-azul-claro: #D3E9FF;
+    --uaslp-dorado: #D4AF37;
+    --fondo-app: #F4F6F9;
+    --texto-oscuro: #1E293B;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--fondo-app);
+    color: var(--texto-oscuro);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Contenedor debajo de la barra superior */
+.layout-principal {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Panel principal con margen interior de 10px según diseño */
+.panel-contenido {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Cuadrícula de widgets de 65x65px */
+.grid-widgets {
+    display: grid;
+    grid-template-columns: repeat(4, 65px);
+    gap: 12px;
+    justify-content: center;
+    margin-top: 10px;
+}
