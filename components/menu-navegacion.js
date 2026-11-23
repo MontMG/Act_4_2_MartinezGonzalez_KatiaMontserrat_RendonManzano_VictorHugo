@@ -1,4 +1,4 @@
-class PortalNavbar extends HTMLElement {
+class MenuNavegacion extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
@@ -12,7 +12,7 @@ class PortalNavbar extends HTMLElement {
         nav {
           background-color: #D9D9D9;
           padding: 0 30px;
-          height: 42px;
+          height: 80px;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -137,15 +137,18 @@ class PortalNavbar extends HTMLElement {
 
         <div class="nav-actions">
           <button class="icon-btn" id="btn-avisos" title="Módulo de avisos">
-            ⚠️ <span class="badge-dot" id="punto-rojo"></span>
+            <img src="./assets/iconos-alerta.svg"> <img>
+            <span class="badge-dot" id="punto-rojo"></span>
           </button>
-          <button class="icon-btn" onclick="location.href='index.html'" title="Cerrar sesión">🚪</button>
+            <button class="icon-btn" onclick="location.href='index.html'" title="Cerrar sesión">
+            <img src="./assets/iconos-salida.svg">
+          </button>
         </div>
 
         <div class="avisos-panel" id="panel-avisos">
           <strong>Módulo de avisos</strong>
-          <div class="aviso-row">ℹ️ Esta es una notificación informativa.</div>
-          <div class="aviso-row aviso-alerta">⚠️ Esta es una notificación urgente.</div>
+          <div class="aviso-row"> Esta es una notificación informativa.</div>
+          <div class="aviso-row aviso-alerta"> Esta es una notificación urgente.</div>
         </div>
       </nav>
     `;
@@ -176,4 +179,4 @@ class PortalNavbar extends HTMLElement {
     }
 }
 
-customElements.define('portal-navbar', PortalNavbar);
+customElements.define('menu-navegacion', MenuNavegacion);

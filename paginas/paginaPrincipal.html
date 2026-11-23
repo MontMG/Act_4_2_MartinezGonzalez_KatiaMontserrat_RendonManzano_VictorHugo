@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal - Portal Académico Estudiantil</title>
+    <link rel="stylesheet" href="../global.css">
+</head>
+
+<style>
+    header {
+        background-color: #2B4C7E;
+        color: white;
+        padding: 14px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    .identidad {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .datos-grid {
+        display: flex;
+        gap: 35px;
+        font-size: 0.78rem;
+        line-height: 1.5;
+        flex: 1;
+    }
+
+    strong {
+        font-weight: 600;
+    }
+
+    .contenedor-principal {
+        flex: 1;
+        max-width: 1300px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 25px 30px;
+    }
+
+    .panel-blanco {
+        background-color: #FFFFFF;
+        border: 1px solid #E0E0E0;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    }
+</style>
+
+<header>
+    <div class="identidad">
+        <div>
+            <img src="../assets/logoFacultad.png" alt="Escudo Facultad de Ingeniería" style="height: 56px;">
+        </div>
+        <div>
+            <img src="../assets/foto.png" alt="Foto de Perfil" style="height: 56px;">
+        </div>
+    </div>
+    <div class="datos-grid">
+        <div>
+            <div>NOMBRE ALUMNO: <strong>Mariana Hernández López</strong></div>
+            <div>ID: <strong>123456789</strong></div>
+        </div>
+        <div>
+            <div>PROMEDIO GENERAL: <strong>8.5</strong></div>
+            <div>CRÉDITOS ACUMULADOS: <strong>120</strong></div>
+            <div>ESTATUS DE INSCRIPCIÓN DEL PERIODO ACTUAL: <strong>Activa</strong></div>
+            <div>PORCENTAJE DE AVANCE: <strong>75%</strong></div>
+        </div>
+    </div>
+</header>
+
+<body>
+    <menu-navegacion activo="inicio"></menu-navegacion>
+    <main class="contenedor-principal">
+        <div class="panel-blanco">
+            <p>Estructura faltante</p>
+        </div>|
+    </main>
+
+    <script type="module" src="../components/menu-navegacion.js"></script>
+</body>
+
+
+</html>

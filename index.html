@@ -2,24 +2,51 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Académico Estudiantil - UASLP</title>
-    <link rel="stylesheet" href="styles/global.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Académico Estudiantil</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <portal-header></portal-header>
-    <portal-navbar activo="inicio"></portal-navbar>
 
-    <main class="contenedor-principal">
-        <div class="panel-blanco">
-            <p>Estructura base del Portal Académico en construcción...</p>
+    <header class="portal-header">
+        <div class="header-identidad">
+            <img class="header-escudo" src="./assets/logoFacultad.png" alt="Escudo Facultad de Ingeniería" />
         </div>
+        <h1 class="header-titulo">Portal Académico Estudiantil</h1>
+    </header>
+
+    <!-- Contenido principal con corte diagonal -->
+    <main class="login-layout">
+        <!-- Lado izquierdo: Fachada -->
+        <div class="login-imagen" role="img" aria-label="Fachada Facultad de Ingeniería UASLP"></div>
+
+        <!-- Lado derecho: Panel blanco con corte diagonal -->
+        <section class="login-panel">
+            <div class="login-caja">
+                <h2 class="login-titulo">Iniciar Sesión</h2>
+
+                <form class="login-form" id="form-login" novalidate>
+                    <!-- Espacio para Web Component: Campo Usuario -->
+                    <div>
+                        Web Component: Campo Usuario
+                    </div>
+
+                    <!-- Espacio para Web Component: Campo Contraseña -->
+                    <div>
+                        Web Component: Campo Contraseña
+                    </div>
+
+                    <!-- Espacio para Web Component: Botón Iniciar -->
+                    <div>
+                        Web Component: Botón Iniciar
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
 
-    <script type="module" src="components/portal-header.js"></script>
-    <script type="module" src="components/portal-navbar.js"></script>
 </body>
 
 </html>
