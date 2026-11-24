@@ -1,0 +1,132 @@
+/* =========================================
+   LAYOUT DE LA PÁGINA PRINCIPAL
+   ========================================= */
+.principal-layout {
+    max-width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 32px;
+}
+
+/* Espacio temporal para los 3 accesos directos */
+.columna-accesos {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.espacio-acceso {
+    width: 130px;
+    height: 130px;
+    border: 2px dashed #94A3B8;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    color: #64748B;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =========================================
+   CONTENEDOR DE EVENTOS IMPORTANTES
+   ========================================= */
+.contenedor-eventos {
+    width: 637.274px;
+    height: 702px;
+    border-radius: 12px;
+    border: 3px solid #DF0000;
+    background: #DBD8D8;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.eventos-titulo {
+    margin-top: 21px;
+    text-align: center;
+    color: #540A0A;
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    flex-shrink: 0;
+}
+
+.lista-eventos {
+    margin-top: 20px;
+    padding: 0 44.27px 25px 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* =========================================
+   TARJETA INDIVIDUAL DE EVENTO
+   ========================================= */
+.tarjeta-evento {
+    height: 95px;
+    flex-shrink: 0;
+    align-self: stretch;
+    border-radius: 8px;
+    background: #FFFFFF;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.evento-izquierda {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    min-width: 0;
+}
+
+.evento-nombre {
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.evento-lugar {
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.evento-derecha {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+    padding-top: 4px;
+    flex-shrink: 0;
+}
+
+.evento-fecha,
+.evento-hora {
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-align: right;
+    white-space: nowrap;
+}

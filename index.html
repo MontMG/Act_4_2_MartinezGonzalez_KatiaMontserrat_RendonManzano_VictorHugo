@@ -5,11 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portal Académico Estudiantil</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/login.css" />
 </head>
 
 <body>
-
     <header class="portal-header">
         <div class="header-identidad">
             <img class="header-escudo" src="./assets/logoFacultad.png" alt="Escudo Facultad de Ingeniería" />
@@ -18,33 +18,24 @@
     </header>
 
     <main class="login-layout">
-
         <div class="login-imagen" role="img" aria-label="Fachada Facultad de Ingeniería UASLP"></div>
 
         <section class="login-panel">
-            <div class="login-caja">
-                <h2 class="login-titulo">Iniciar Sesión</h2>
+            <h2 class="login-titulo">Iniciar Sesión</h2>
 
-                <form class="login-form" id="form-login" novalidate>
-
-                    <div>
-                        Web Component: Campo Usuario
-                    </div>
-
-
-                    <div>
-                        Web Component: Campo Contraseña
-                    </div>
-
-
-                    <div>
-                        Web Component: Botón Iniciar
-                    </div>
-                </form>
-            </div>
+            <form class="login-form" id="form-login" novalidate>
+                <campo-texto id="campo-usuario" label="Usuario" placeholder="Usuario" estado="normal"></campo-texto>
+                <campo-contrasena id="campo-password" visible="falso" placeholder="Contraseña"></campo-contrasena>
+                <boton-accion id="btn-iniciar" texto="Iniciar" tipo="primario" disabled></boton-accion>
+            </form>
         </section>
     </main>
 
+    <script type="module" src="./components/campo-texto.js"></script>
+    <script type="module" src="./components/campo-contrasena.js"></script>
+    <script type="module" src="./components/botones.js"></script>
+
+    <script type="module" src="./js/login.js"></script>
 </body>
 
 </html>
