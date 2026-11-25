@@ -30,6 +30,11 @@ class CampoDesplegable extends HTMLElement {
         const listaOpciones = opcionesAttr.split(',').map(op => op.trim()).filter(Boolean);
         const textoActual = this.seleccionado || placeholder;
 
+        const archivoFlecha = `Icono=Desplegable, Estado=${this.abierto ? 'Abierto' : 'Cerrado'}.svg`;
+        const rutaFlecha = new URL(`../assets/iconos/${encodeURIComponent(archivoFlecha)}`, import.meta.url).href;
+        const archivoCheck = 'Icono=PalomitaMenu, Estado=Visible.svg';
+        const rutaCheck = new URL(`../assets/iconos/${encodeURIComponent(archivoCheck)}`, import.meta.url).href;
+
         this.shadowRoot.innerHTML = `
       <style>
         .contenedor {
@@ -114,11 +119,7 @@ class CampoDesplegable extends HTMLElement {
       <div class="contenedor" id="contenedor">
         <div class="caja-select" id="trigger">
           <span class="texto-caja">${textoActual}</span>
-          <img
-            class="icono-flecha"
-            src="./assets/iconos/Icono=Desplegable, Estado=${this.abierto ? 'Abierto' : 'Cerrado'}.svg"
-            alt="Desplegar"
-          >
+          <img class="icono-flecha" src="${rutaFlecha}" alt="Desplegar">
         </div>
 
         <div class="lista-opciones ${this.abierto ? 'visible' : ''}" id="lista">
@@ -127,7 +128,7 @@ class CampoDesplegable extends HTMLElement {
             return `
               <div class="opcion-item ${esSeleccionada ? 'seleccionada' : ''}" data-valor="${op}">
                 <span>${op}</span>
-                ${esSeleccionada ? '<img class="icono-check" src="./assets/iconos/Icono=PalomitaMenu, Estado=Visible.svg" alt="Seleccionado">' : ''}
+                ${esSeleccionada ? `<img class="icono-check" src="${rutaCheck}" alt="Seleccionado">` : ''}
               </div>
             `;
         }).join('')}

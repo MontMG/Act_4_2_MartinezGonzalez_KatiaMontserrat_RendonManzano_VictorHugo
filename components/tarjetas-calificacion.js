@@ -25,6 +25,9 @@ class TarjetaCalificacion extends HTMLElement {
         const calificacion = this.getAttribute('calificacion') || '';
         const calificada = calificacion.trim() !== '';
 
+        const archivoFlecha = 'Icono=Desplegable, Estado=Cerrado.svg';
+        const rutaFlecha = new URL(`../assets/iconos/${encodeURIComponent(archivoFlecha)}`, import.meta.url).href;
+
         const filas = [
             { nombre: 'Parcial 1', valor: this.getAttribute('parcial1') || '90' },
             { nombre: 'Parcial 2', valor: this.getAttribute('parcial2') || '80' },
@@ -135,7 +138,7 @@ class TarjetaCalificacion extends HTMLElement {
             <span class="subtitulo">${grupo}</span>
           </div>
 
-          ${calificada ? `<img class="flecha" src="./assets/iconos/Icono=Desplegable, Estado=Cerrado.svg" alt="Desplegar">` : ''}
+          ${calificada ? `<img class="flecha" src="${rutaFlecha}" alt="Desplegar">` : ''}
 
           <div class="cuadro-nota">
             ${calificada ? `

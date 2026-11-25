@@ -21,12 +21,18 @@ class AccesosDirectos extends HTMLElement {
     render() {
         const acceso = this.getAttribute('acceso') || 'Horario';
         const tipo = this.getAttribute('tipo') || 'Normal';
-        const href = this.getAttribute('href') || '';
+        const href = this.getAttribute('href');
 
         const textos = {
             'Horario': 'Horario escolar',
             'Materias': 'Materias',
             'Calificaciones': 'Calificaciones'
+        };
+
+        const rutasPorDefecto = {
+            'Horario': './horario.html',
+            'Materias': './materias.html',
+            'Calificaciones': './calificaciones.html'
         };
 
         const sufijoArchivo = {
@@ -56,7 +62,9 @@ class AccesosDirectos extends HTMLElement {
         const estilo = estilosEstado[tipo] || estilosEstado['Normal'];
         const estadoSvg = sufijoArchivo[tipo] || 'Normal';
         const etiqueta = textos[acceso] || acceso;
-        const rutaSvg = `./assets/iconos/Icono=Icono${acceso}, Estado=${estadoSvg}.svg`;
+        const destino = href !== null ? href : (rutasPorDefecto[acceso] || '');
+        const nombreArchivo = `Icono=Icono${acceso}, Estado=${estadoSvg}.svg`;
+        const rutaSvg = new URL(`../assets/iconos/${encodeURIComponent(nombreArchivo)}`, import.meta.url).href;
 
         this.shadowRoot.innerHTML = `
       <style>
@@ -114,13 +122,14 @@ class AccesosDirectos extends HTMLElement {
     `;
 
         this.shadowRoot.getElementById('card').addEventListener('click', () => {
-            if (href) {
-                window.location.href = href;
-            }
             this.dispatchEvent(new CustomEvent('acceso-click', {
-                detail: { acceso, tipo },
+                detail: { acceso, tipo, destino },
                 bubbles: true
             }));
+
+            if (destino) {
+                window.location.href = destino;
+            }
         });
     }
 }

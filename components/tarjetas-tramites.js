@@ -25,6 +25,9 @@ class TarjetaTramite extends HTMLElement {
         const estado = this.getAttribute('estado') || '';
         const completado = estado.trim().toLowerCase() === 'completado';
 
+        const archivoFlecha = 'Icono=Desplegable, Estado=Cerrado.svg';
+        const rutaFlecha = new URL(`../assets/iconos/${encodeURIComponent(archivoFlecha)}`, import.meta.url).href;
+
         const filas = [
             { nombre: 'Requisitos entregados.', valor: this.getAttribute('requisitos') || 'Entregados' },
             { nombre: 'Fecha de solicitud:', valor: this.getAttribute('fecha') || '07/09/26' },
@@ -129,7 +132,7 @@ class TarjetaTramite extends HTMLElement {
             <span class="subtitulo">${clave}</span>
           </div>
 
-          ${completado ? `<img class="flecha" src="./assets/iconos/Icono=Desplegable, Estado=Cerrado.svg" alt="Desplegar">` : ''}
+          ${completado ? `<img class="flecha" src="${rutaFlecha}" alt="Desplegar">` : ''}
 
           <div class="cuadro-estado">
             ${completado ? `<span class="estado-texto">Completado</span>` : ''}

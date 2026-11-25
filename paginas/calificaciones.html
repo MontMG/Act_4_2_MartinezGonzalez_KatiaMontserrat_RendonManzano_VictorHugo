@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calificaciones - Portal Académico Estudiantil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/portal.css" />
+</head>
+
+<body>
+    <portal-header></portal-header>
+
+    <barra-navegacion activo="alumno"></barra-navegacion>
+
+    <main class="contenedor-principal">
+        <h1
+            style="font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 700; text-align: center; margin: 24px 0;">
+            Calificaciones
+        </h1>
+
+        <section style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; justify-items: center;">
+            <tarjeta-calificacion materia="Criptografía" grupo="Grupo 202401 - 7mo semestre" calificacion="9.5"
+                parcial1="90" parcial2="80" parcial3="80" tareas="95" final="70">
+            </tarjeta-calificacion>
+
+            <tarjeta-calificacion materia="Compiladores" grupo="Grupo 202402 - 7mo semestre" calificacion="8.8"
+                parcial1="85" parcial2="90" parcial3="88" tareas="92" final="85">
+            </tarjeta-calificacion>
+
+            <tarjeta-calificacion materia="Interfaces de Usuario" grupo="Grupo 202403 - 7mo semestre">
+            </tarjeta-calificacion>
+        </section>
+    </main>
+
+    <script type="module" src="../js/calificaciones.js"></script>
+</body>
+
+</html>
