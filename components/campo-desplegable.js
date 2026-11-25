@@ -1,0 +1,176 @@
+class CampoDesplegable extends HTMLElement {
+    static get observedAttributes() {
+        return ['placeholder', 'opciones', 'valor'];
+    }
+
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.abierto = false;
+        this.seleccionado = '';
+    }
+
+    connectedCallback() {
+        this.seleccionado = this.getAttribute('valor') || '';
+        this.render();
+    }
+
+    attributeChangedCallback(name, oldVal, newVal) {
+        if (name === 'valor' && oldVal !== newVal) {
+            this.seleccionado = newVal || '';
+        }
+        if (this.shadowRoot.innerHTML !== '') {
+            this.render();
+        }
+    }
+
+    render() {
+        const placeholder = this.getAttribute('placeholder') || 'Input text';
+        const opcionesAttr = this.getAttribute('opciones') || 'Item 1,Item 2,Item 3,Item 4';
+        const listaOpciones = opcionesAttr.split(',').map(op => op.trim()).filter(Boolean);
+        const textoActual = this.seleccionado || placeholder;
+
+        this.shadowRoot.innerHTML = `
+      <style>
+        .contenedor {
+          position: relative;
+          width: 453px;
+          font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+          user-select: none;
+        }
+        .caja-select {
+          width: 453px;
+          min-height: 54px;
+          padding: 14px 20px;
+          background-color: #FFFFFF;
+          border: 2px solid #714BBC;
+          border-radius: 5px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          cursor: pointer;
+          box-sizing: border-box;
+        }
+        .texto-caja {
+          font-size: 16px;
+          color: #222222;
+        }
+        .icono-flecha {
+          width: 20px;
+          height: 20px;
+          object-fit: contain;
+        }
+        .lista-opciones {
+          position: absolute;
+          top: 100%;
+          left: 2px;
+          width: 449px;
+          background-color: #FFFFFF;
+          border: 1px solid #A8A8A8;
+          box-sizing: border-box;
+          z-index: 100;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(-4px);
+          transition: opacity 100ms ease-out, transform 100ms ease-out, visibility 100ms ease-out;
+        }
+        .lista-opciones.visible {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+        .opcion-item {
+          width: 100%;
+          padding: 14px 13px 14px 11px;
+          background-color: #FFFFFF;
+          border-bottom: 1px solid #A8A8A8;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          font-size: 16px;
+          color: #222222;
+          cursor: pointer;
+          box-sizing: border-box;
+          transition: background-color 100ms ease-out;
+        }
+        .opcion-item:last-child {
+          border-bottom: none;
+        }
+        .opcion-item:hover {
+          background-color: #B4BEE0;
+        }
+        .opcion-item.seleccionada {
+          background-color: #DFE1F2;
+        }
+        .icono-check {
+          width: 18px;
+          height: 18px;
+          object-fit: contain;
+        }
+      </style>
+
+      <div class="contenedor" id="contenedor">
+        <div class="caja-select" id="trigger">
+          <span class="texto-caja">${textoActual}</span>
+          <img
+            class="icono-flecha"
+            src="./assets/iconos/Icono=Desplegable, Estado=${this.abierto ? 'Abierto' : 'Cerrado'}.svg"
+            alt="Desplegar"
+          >
+        </div>
+
+        <div class="lista-opciones ${this.abierto ? 'visible' : ''}" id="lista">
+          ${listaOpciones.map(op => {
+            const esSeleccionada = op === this.seleccionado;
+            return `
+              <div class="opcion-item ${esSeleccionada ? 'seleccionada' : ''}" data-valor="${op}">
+                <span>${op}</span>
+                ${esSeleccionada ? '<img class="icono-check" src="./assets/iconos/Icono=PalomitaMenu, Estado=Visible.svg" alt="Seleccionado">' : ''}
+              </div>
+            `;
+        }).join('')}
+        </div>
+      </div>
+    `;
+
+        const trigger = this.shadowRoot.getElementById('trigger');
+        const items = this.shadowRoot.querySelectorAll('.opcion-item');
+
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.abierto = !this.abierto;
+            this.render();
+        });
+
+        items.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.seleccionado = item.getAttribute('data-valor');
+                this.setAttribute('valor', this.seleccionado);
+                this.abierto = false;
+                this.render();
+                this.dispatchEvent(new CustomEvent('cambio-opcion', {
+                    detail: { valor: this.seleccionado },
+                    bubbles: true
+                }));
+            });
+        });
+
+        document.addEventListener('click', this.cerrarAlClickFuera, { once: true });
+    }
+
+    cerrarAlClickFuera = () => {
+        if (this.abierto) {
+            this.abierto = false;
+            this.render();
+        }
+    };
+
+    get value() {
+        return this.seleccionado;
+    }
+}
+
+customElements.define('campo-desplegable', CampoDesplegable);
