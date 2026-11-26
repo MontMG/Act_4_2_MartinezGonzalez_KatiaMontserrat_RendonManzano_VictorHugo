@@ -1,0 +1,41 @@
+/* =========================================
+   LAYOUT DE LA PÁGINA DE CALIFICACIONES
+   ========================================= */
+.calificaciones-contenedor {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px 32px 48px;
+}
+
+.calificaciones-titulo {
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #111111;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.grid-calificaciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr));
+    align-items: start;
+    gap: 24px;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .calificaciones-contenedor {
+        padding: 16px 16px 36px;
+    }
+
+    .calificaciones-titulo {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .grid-calificaciones {
+        gap: 16px;
+    }
+}

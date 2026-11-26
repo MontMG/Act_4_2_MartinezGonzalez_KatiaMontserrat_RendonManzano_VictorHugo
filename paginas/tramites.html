@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trámites - Portal Académico Estudiantil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/portal.css" />
+    <link rel="stylesheet" href="../css/tramites.css" />
+</head>
+
+<body>
+    <portal-header></portal-header>
+
+    <barra-navegacion activo="tramites"></barra-navegacion>
+
+    <main class="contenedor-principal tramites-contenedor">
+        <h1 class="tramites-titulo">Trámites Pendientes</h1>
+
+        <section class="grid-tramites" aria-label="Listado de trámites">
+            <tarjeta-tramite
+                tramite="Kardex"
+                clave="TR-2026-200"
+                estado="Completado"
+                requisitos="Entregados"
+                fecha="07/09/26"
+                costo="$70"
+                lugar="Servicios Escolares"
+                folio="457890">
+            </tarjeta-tramite>
+
+            <tarjeta-tramite
+                tramite="Constancia de Estudios"
+                clave="TR-2026-204"
+                estado="Completado"
+                requisitos="Entregados"
+                fecha="15/09/26"
+                costo="$55"
+                lugar="Ventanilla 2"
+                folio="458112">
+            </tarjeta-tramite>
+
+            <tarjeta-tramite
+                tramite="Seguro Facultativo"
+                clave="TR-2026-211"
+                estado="Completado"
+                requisitos="Entregados"
+                fecha="22/09/26"
+                costo="Sin costo"
+                lugar="Dirección Académica"
+                folio="458390">
+            </tarjeta-tramite>
+
+            <tarjeta-tramite
+                tramite="Reposición de Credencial"
+                clave="TR-2026-219"
+                estado="Completado"
+                requisitos="Entregados"
+                fecha="03/10/26"
+                costo="$120"
+                lugar="Módulo de Credencialización"
+                folio="459014">
+            </tarjeta-tramite>
+
+            <tarjeta-tramite
+                tramite="Carta de Pasante"
+                clave="TR-2026-225">
+            </tarjeta-tramite>
+        </section>
+    </main>
+
+    <script type="module" src="../js/tramites.js"></script>
+</body>
+
+</html>

@@ -1,7 +1,8 @@
 import '../components/portal-header.js';
 import '../components/barra-navegacion.js';
-import '../components/calendario.js';
 import '../components/accesos-directos.js';
+import '../components/calendario.js';
+import '../components/lista-eventos.js';
 
 const eventosPorDia = {
     4: [
@@ -37,47 +38,8 @@ const eventosPorDia = {
 };
 
 const calendario = document.getElementById('calendario');
-const listaEventos = document.getElementById('lista-eventos');
-
-function renderizarEventos(dia) {
-    listaEventos.innerHTML = '';
-    const eventos = eventosPorDia[dia] || [];
-
-    eventos.forEach((evento) => {
-        const tarjeta = document.createElement('article');
-        tarjeta.className = 'tarjeta-evento';
-
-        const infoIzquierda = document.createElement('div');
-        infoIzquierda.className = 'evento-izquierda';
-
-        const titulo = document.createElement('h3');
-        titulo.className = 'evento-nombre';
-        titulo.textContent = evento.titulo;
-
-        const lugar = document.createElement('p');
-        lugar.className = 'evento-lugar';
-        lugar.textContent = `Lugar: ${evento.lugar}`;
-
-        infoIzquierda.append(titulo, lugar);
-
-        const infoDerecha = document.createElement('div');
-        infoDerecha.className = 'evento-derecha';
-
-        const fecha = document.createElement('span');
-        fecha.className = 'evento-fecha';
-        fecha.textContent = `Fecha: ${evento.fecha}`;
-
-        const hora = document.createElement('span');
-        hora.className = 'evento-hora';
-        hora.textContent = `Hora: ${evento.hora}`;
-
-        infoDerecha.append(fecha, hora);
-
-        tarjeta.append(infoIzquierda, infoDerecha);
-        listaEventos.appendChild(tarjeta);
-    });
-}
+const panelEventos = document.getElementById('panel-eventos');
 
 calendario.addEventListener('dia-seleccionado', (e) => {
-    renderizarEventos(e.detail.dia);
+    panelEventos.eventos = eventosPorDia[e.detail.dia] || [];
 });

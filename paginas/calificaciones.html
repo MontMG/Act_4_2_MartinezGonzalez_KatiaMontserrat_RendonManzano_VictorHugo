@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="../css/global.css" />
     <link rel="stylesheet" href="../css/portal.css" />
+    <link rel="stylesheet" href="../css/calificaciones.css" />
 </head>
 
 <body>
@@ -18,22 +19,62 @@
 
     <barra-navegacion activo="alumno"></barra-navegacion>
 
-    <main class="contenedor-principal">
-        <h1
-            style="font-family: 'Inter', sans-serif; font-size: 28px; font-weight: 700; text-align: center; margin: 24px 0;">
-            Calificaciones
-        </h1>
+    <main class="contenedor-principal calificaciones-contenedor">
+        <h1 class="calificaciones-titulo">Calificaciones</h1>
 
-        <section style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; justify-items: center;">
-            <tarjeta-calificacion materia="Criptografía" grupo="Grupo 202401 - 7mo semestre" calificacion="9.5"
-                parcial1="90" parcial2="80" parcial3="80" tareas="95" final="70">
+        <section class="grid-calificaciones" aria-label="Listado de calificaciones">
+            <tarjeta-calificacion
+                materia="Criptografía"
+                grupo="Grupo 202401 - 7mo semestre"
+                calificacion="9.5"
+                parcial1="90"
+                parcial2="95"
+                parcial3="98"
+                tareas="95"
+                final="92">
             </tarjeta-calificacion>
 
-            <tarjeta-calificacion materia="Compiladores" grupo="Grupo 202402 - 7mo semestre" calificacion="8.8"
-                parcial1="85" parcial2="90" parcial3="88" tareas="92" final="85">
+            <tarjeta-calificacion
+                materia="Compiladores"
+                grupo="Grupo 202402 - 7mo semestre"
+                calificacion="8.8"
+                parcial1="85"
+                parcial2="90"
+                parcial3="88"
+                tareas="92"
+                final="85">
             </tarjeta-calificacion>
 
-            <tarjeta-calificacion materia="Interfaces de Usuario" grupo="Grupo 202403 - 7mo semestre">
+            <tarjeta-calificacion
+                materia="Diseño de Interfaces"
+                grupo="Grupo 202403 - 7mo semestre"
+                calificacion="9.2"
+                parcial1="90"
+                parcial2="92"
+                parcial3="95"
+                tareas="94"
+                final="90">
+            </tarjeta-calificacion>
+
+            <tarjeta-calificacion
+                materia="Redes de Computadoras"
+                grupo="Grupo 202404 - 7mo semestre"
+                calificacion="8.4"
+                parcial1="80"
+                parcial2="86"
+                parcial3="85"
+                tareas="88"
+                final="82">
+            </tarjeta-calificacion>
+
+            <tarjeta-calificacion
+                materia="Ingeniería de Software"
+                grupo="Grupo 202405 - 7mo semestre">
+            </tarjeta-calificacion>
+
+            <tarjeta-calificacion
+                materia="Inteligencia Artificial"
+                grupo="Grupo 202406 - 7mo semestre">
             </tarjeta-calificacion>
         </section>
     </main>

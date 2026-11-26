@@ -10,26 +10,10 @@
     gap: 32px;
 }
 
-/* Espacio temporal para los 3 accesos directos */
 .columna-accesos {
     display: flex;
     flex-direction: column;
     gap: 24px;
-}
-
-.espacio-acceso {
-    width: 130px;
-    height: 130px;
-    border: 2px dashed #94A3B8;
-    border-radius: 10px;
-    background-color: #FFFFFF;
-    color: #64748B;
-    font-size: 0.8rem;
-    text-align: center;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 /* =========================================

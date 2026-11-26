@@ -20,21 +20,15 @@
     <barra-navegacion activo="inicio"></barra-navegacion>
 
     <main class="contenedor-principal principal-layout">
-        <!-- Columna izquierda: espacio temporal para Web Component <accesos-directos> -->
         <section class="columna-accesos" aria-label="Accesos directos">
             <accesos-directos acceso="Horario" tipo="Requiere acción"></accesos-directos>
             <accesos-directos acceso="Materias" tipo="Normal"></accesos-directos>
             <accesos-directos acceso="Calificaciones" tipo="Leído"></accesos-directos>
         </section>
 
-        <!-- Columna centro: Web Component del Calendario -->
         <mi-calendario id="calendario" mes="Noviembre" dias="31" eventos="4,17,25"></mi-calendario>
 
-        <!-- Columna derecha: Panel de Eventos Importantes en HTML clásico -->
-        <aside class="contenedor-eventos" aria-label="Eventos Importantes">
-            <h2 class="eventos-titulo">Eventos Importantes</h2>
-            <div class="lista-eventos" id="lista-eventos"></div>
-        </aside>
+        <lista-eventos id="panel-eventos" titulo="Eventos Importantes"></lista-eventos>
     </main>
 
     <script type="module" src="../js/principal.js"></script>

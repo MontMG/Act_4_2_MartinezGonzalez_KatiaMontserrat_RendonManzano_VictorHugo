@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materias - Portal Académico Estudiantil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/portal.css" />
+    <link rel="stylesheet" href="../css/materias.css" />
+</head>
+
+<body>
+    <portal-header></portal-header>
+
+    <barra-navegacion activo="alumno"></barra-navegacion>
+
+    <main class="contenedor-principal materias-contenedor">
+        <h1 class="materias-titulo">Materias (Ciclo 2026-2027 / I)</h1>
+
+        <div class="materias-layout">
+            <!-- Columna izquierda: Materias del ciclo actual -->
+            <section class="columna-actuales" aria-label="Materias inscritas">
+                <tarjeta-materia
+                    materia="Criptografía (202401)"
+                    profesor="Profesor: Juana Patricia Gutiérrez"
+                    horario="Horario: Lunes-Viernes 7:00 AM - 8:00 AM (I-12)"
+                    estatus="INSCRITO">
+                </tarjeta-materia>
+
+                <tarjeta-materia
+                    materia="Compiladores (202402)"
+                    profesor="Profesor: Marco Antonio Ramírez"
+                    horario="Horario: Lunes-Viernes 9:00 AM - 10:00 AM (I-14)"
+                    estatus="INSCRITO">
+                </tarjeta-materia>
+
+                <tarjeta-materia
+                    materia="Diseño de Interfaces (202403)"
+                    profesor="Profesor: Genoveva Viridiana Silva"
+                    horario="Horario: Lunes-Miércoles-Viernes 11:00 AM - 12:00 PM (Lab 2)"
+                    estatus="INSCRITO">
+                </tarjeta-materia>
+
+                <tarjeta-materia
+                    materia="Redes de Computadoras (202404)"
+                    profesor="Profesor: Carlos Eduardo Morales"
+                    horario="Horario: Martes-Jueves 1:00 PM - 3:00 PM (I-08)"
+                    estatus="INSCRITO">
+                </tarjeta-materia>
+            </section>
+
+            <!-- Columna derecha: Historial Académico con filtro por periodo -->
+            <aside class="columna-historial" aria-label="Historial académico">
+                <div class="historial-cabecera">
+                    <h2 class="historial-subtitulo">Historial Académico</h2>
+                    <campo-desplegable
+                        id="filtro-periodo"
+                        placeholder="Filtrar por periodo"
+                        valor="Todos los periodos"
+                        opciones="Todos los periodos, 2025-2026 / II, 2025-2026 / I, 2024-2025 / II, 2024-2025 / I">
+                    </campo-desplegable>
+                </div>
+
+                <div class="lista-historial" id="lista-historial"></div>
+            </aside>
+        </div>
+    </main>
+
+    <script type="module" src="../js/materias.js"></script>
+</body>
+
+</html>

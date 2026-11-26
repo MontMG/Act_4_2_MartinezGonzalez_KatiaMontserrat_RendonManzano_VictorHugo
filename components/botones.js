@@ -56,14 +56,14 @@ class BotonAccion extends HTMLElement {
 
                 button {
                     display: flex;
-                    width: 238px;
-                    height: 62px;
-                    padding: 0.937px 2.812px;
+                    width: var(--btn-width, 238px);
+                    height: var(--btn-height, 62px);
+                    padding: var(--btn-padding, 0.937px 2.812px);
                     justify-content: center;
                     align-items: center;
                     align-content: space-between;
                     gap: 12.187px;
-                    border-radius: 9.375px;
+                    border-radius: var(--btn-radius, 9.375px);
                     cursor: pointer;
                     transition: background-color 300ms ease-out, color 300ms ease-out, border-color 300ms ease-out;
                     box-sizing: border-box;
@@ -71,17 +71,17 @@ class BotonAccion extends HTMLElement {
 
                 .btn-texto {
                     display: flex;
-                    height: 22.5px;
+                    height: var(--btn-texto-height, 22.5px);
                     flex-direction: column;
                     justify-content: center;
                     flex: 1 0 0;
                     color: inherit;
                     text-align: center;
                     font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-                    font-size: 30px;
+                    font-size: var(--btn-font-size, 30px);
                     font-style: normal;
-                    font-weight: 600;
-                    line-height: 37.5px; /* 125% */
+                    font-weight: var(--btn-font-weight, 600);
+                    line-height: var(--btn-line-height, 37.5px);
                 }
 
                 /* ===== PRIMARIO ===== */

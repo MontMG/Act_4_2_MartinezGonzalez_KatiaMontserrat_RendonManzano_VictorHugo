@@ -1,0 +1,101 @@
+/* =========================================
+   LAYOUT DE LA PÁGINA DE MATERIAS
+   ========================================= */
+.materias-contenedor {
+    max-width: 1680px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 24px 32px 48px;
+}
+
+.materias-titulo {
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #111111;
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.materias-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 936px) minmax(0, 681px);
+    justify-content: center;
+    align-items: start;
+    gap: 28px;
+    width: 100%;
+}
+
+/* Panel izquierdo: #B1C9EF al 20% de opacidad solo en el fondo */
+.columna-actuales {
+    background-color: rgba(177, 201, 239, 0.2);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Panel derecho: fondo blanco */
+.columna-historial {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.historial-cabecera {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.historial-subtitulo {
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #111111;
+}
+
+.lista-historial {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+@media (max-width: 1180px) {
+    .materias-layout {
+        grid-template-columns: 1fr;
+        max-width: 936px;
+        margin: 0 auto;
+        gap: 32px;
+    }
+
+    .columna-historial {
+        max-width: 681px;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .materias-contenedor {
+        padding: 16px 16px 36px;
+    }
+
+    .materias-titulo {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .columna-actuales,
+    .columna-historial {
+        padding: 16px;
+    }
+
+    .historial-subtitulo {
+        font-size: 18px;
+    }
+}
