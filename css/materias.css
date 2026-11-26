@@ -1,6 +1,3 @@
-/* =========================================
-   LAYOUT DE LA PÁGINA DE MATERIAS
-   ========================================= */
 .materias-contenedor {
     max-width: 1680px;
     width: 100%;
@@ -26,7 +23,6 @@
     width: 100%;
 }
 
-/* Panel izquierdo: #B1C9EF al 20% de opacidad solo en el fondo */
 .columna-actuales {
     background-color: rgba(177, 201, 239, 0.2);
     border-radius: 12px;
@@ -36,7 +32,6 @@
     gap: 20px;
 }
 
-/* Panel derecho: fondo blanco */
 .columna-historial {
     background: #FFFFFF;
     border-radius: 12px;

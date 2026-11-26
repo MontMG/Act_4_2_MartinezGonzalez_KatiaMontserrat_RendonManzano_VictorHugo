@@ -36,7 +36,6 @@ function iniciarSesion() {
     window.location.href = './paginas/pagina-principal.html';
 }
 
-// Al escribir: limpia el error (si existía) para que se vea el foco y actualiza el botón
 campoUsuario.addEventListener('campo-input', () => {
     if (campoUsuario.getAttribute('estado') === 'error' && campoUsuario.value.trim().length > 0) {
         campoUsuario.setAttribute('estado', 'normal');
@@ -44,7 +43,6 @@ campoUsuario.addEventListener('campo-input', () => {
     actualizarEstadoBoton();
 });
 
-// Al salir del campo usuario: marca error si quedó vacío o correcto si tiene texto
 campoUsuario.addEventListener('campo-blur', () => {
     if (campoUsuario.value.trim().length === 0) {
         campoUsuario.setAttribute('estado', 'error');
@@ -56,10 +54,8 @@ campoUsuario.addEventListener('campo-blur', () => {
 
 campoPassword.addEventListener('campo-input', actualizarEstadoBoton);
 
-// Clic en el Web Component <boton-accion>
 btnIniciar.addEventListener('accion-click', iniciarSesion);
 
-// Permite también iniciar sesión presionando Enter dentro del formulario
 formLogin.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && !btnIniciar.hasAttribute('disabled')) {
         e.preventDefault();

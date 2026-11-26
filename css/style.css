@@ -13,9 +13,6 @@ body {
     color: #162436;
 }
 
-/* =========================================
-   ENCABEZADO SUPERIOR
-   ========================================= */
 .portal-header {
     background-color: #395886;
     color: #FFFFFF;
@@ -41,9 +38,7 @@ body {
     line-height: 48px; /* 96% */
 }
 
-/* =========================================
-   LAYOUT PRINCIPAL (ESCRITORIO)
-   ========================================= */
+
 .login-layout {
     position: relative;
     flex: 1;
@@ -91,9 +86,6 @@ body {
     gap: 24px;
 }
 
-/* =========================================
-   RESPONSIVO: TABLET Y CELULAR (≤ 900px)
-   ========================================= */
 @media (max-width: 900px) {
     .portal-header {
         min-height: 90px;
@@ -108,7 +100,7 @@ body {
     }
 
     .login-layout {
-        justify-content: center; /* Recorre el formulario al centro/izquierda */
+        justify-content: center; 
     }
 
     .login-imagen {
@@ -116,7 +108,6 @@ body {
         height: 100%;
     }
 
-    /* El formulario se empalma directamente sobre la imagen */
     .login-panel {
         width: 100%;
         padding: 36px 24px;

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Horario Escolar - Portal Académico Estudiantil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/portal.css" />
+    <link rel="stylesheet" href="../css/horario.css" />
+</head>
+
+<body>
+    <portal-header></portal-header>
+
+    <barra-navegacion activo="alumno"></barra-navegacion>
+
+    <main class="contenedor-principal">
+        <h1 class="titulo-horario">HORARIO ESCOLAR</h1>
+
+        <div class="contenedor-tabla">
+            <table class="tabla-horario" id="tabla-horario">
+                <thead>
+                    <tr>
+                        <th>HORA</th>
+                        <th>LUNES</th>
+                        <th>MARTES</th>
+                        <th>MIÉRCOLES</th>
+                        <th>JUEVES</th>
+                        <th>VIERNES</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpo-horario"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <script type="module" src="../js/horario.js"></script>
+</body>
+
+</html>

@@ -4,9 +4,6 @@ body {
     color: #162436;
 }
 
-/* =========================================
-   ENCABEZADO SUPERIOR
-   ========================================= */
 .portal-header {
     background-color: #395886;
     color: #FFFFFF;
@@ -32,9 +29,6 @@ body {
     line-height: 48px;
 }
 
-/* =========================================
-   LAYOUT PRINCIPAL (ESCRITORIO)
-   ========================================= */
 .login-layout {
     position: relative;
     flex: 1;
@@ -96,10 +90,6 @@ body {
     text-align: center;
 }
 
-
-/* =========================================
-   RESPONSIVO: TABLET Y CELULAR (≤ 900px)
-   ========================================= */
 @media (max-width: 900px) {
     .portal-header {
         min-height: 90px;
