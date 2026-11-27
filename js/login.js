@@ -33,7 +33,7 @@ function iniciarSesion() {
     }
 
     campoUsuario.setAttribute('estado', 'correcto');
-    window.location.href = './paginas/pagina-principal.html';
+    window.location.href = './views/pagina-principal.html';
 }
 
 campoUsuario.addEventListener('campo-input', () => {

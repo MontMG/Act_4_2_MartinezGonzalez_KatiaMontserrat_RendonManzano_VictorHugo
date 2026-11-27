@@ -68,18 +68,21 @@ class AccesosDirectos extends HTMLElement {
 
         this.shadowRoot.innerHTML = `
       <style>
+        :host {
+          display: block;
+        }
         .tarjeta {
-          width: 168px;
-          height: 142px;
-          border-radius: 12px;
+          width: 136px;
+          height: 118px;
+          border-radius: 10px;
           border: 1px solid #E0E0E0;
-          padding: 16px;
+          padding: 12px;
           background-color: ${estilo.fondo};
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
-          gap: 12px;
+          gap: 8px;
           cursor: pointer;
           box-sizing: border-box;
           transition: transform 200ms ease-out, box-shadow 200ms ease-out;
@@ -89,29 +92,56 @@ class AccesosDirectos extends HTMLElement {
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         }
         .contenedor-icono {
-          width: 60px;
-          height: 60px;
-          border-radius: 20px;
+          width: 46px;
+          height: 46px;
+          border-radius: 14px;
           background-color: ${estilo.cajaIcono};
           display: flex;
           align-items: center;
           justify-content: center;
         }
         .contenedor-icono img {
-          width: 30px;
-          height: 30px;
+          width: 24px;
+          height: 24px;
           object-fit: contain;
         }
         .titulo {
           font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
           font-weight: 600;
-          font-size: 16px;
-          line-height: 22px;
+          font-size: 13.5px;
+          line-height: 18px;
           letter-spacing: 0%;
           color: ${estilo.texto};
           text-align: center;
           white-space: nowrap;
         }
+        @media (max-width: 640px) {
+          :host {
+            width: 100%;
+          }
+
+          .tarjeta {
+            width: 100%;
+            height: 98px;
+            padding: 8px 6px;
+            gap: 6px;
+          }
+
+          .contenedor-icono {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+          }
+
+          .contenedor-icono img {
+            width: 22px;
+            height: 22px;
+          }
+
+          .titulo {
+            font-size: 11.5px;
+            line-height: 14px;
+          }
       </style>
       <div class="tarjeta" id="card">
         <div class="contenedor-icono">

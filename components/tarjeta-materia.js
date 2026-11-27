@@ -40,85 +40,108 @@ class TarjetaMateria extends HTMLElement {
 
                 .tarjeta {
                     width: 100%;
-                    max-width: 888px;
-                    min-height: 124px;
+                    max-width: 660px;
+                    min-height: 86px;
                     border-radius: 8px;
                     background-color: #B1C9EF;
-                    padding: 15px 21px;
+                    padding: 12px 16px;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    gap: 16px;
+                    gap: 14px;
                     font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
                 }
 
                 .info-materia {
                     display: flex;
                     flex-direction: column;
-                    gap: 6px;
+                    gap: 4px;
                     min-width: 0;
                     flex: 1;
                 }
 
                 .titulo {
-                    font-size: 24px;
+                    font-size: 16px;
                     font-weight: 600;
-                    line-height: 1.15;
+                    line-height: 1.2;
                     color: #000000;
                 }
 
                 .detalle {
-                    font-size: 20px;
-                    font-weight: 200;
-                    line-height: 1.2;
+                    font-size: 13px;
+                    font-weight: 300;
+                    line-height: 1.25;
                     color: #000000;
                 }
 
                 .acciones {
                     display: flex;
                     align-items: center;
-                    gap: 17px;
+                    gap: 12px;
                     flex-shrink: 0;
                 }
 
                 .badge-estatus {
-                    width: 132px;
-                    height: 40px;
-                    border-radius: 8px;
+                    width: 92px;
+                    height: 30px;
+                    border-radius: 6px;
                     background-color: #DBF8D5;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    font-size: 20px;
+                    font-size: 13px;
                     font-weight: 600;
-                    line-height: 100%;
+                    line-height: 1;
                     color: #258A11;
                 }
 
+                /* Si estás usando <boton-accion> */
                 boton-accion {
-                    --btn-width: 144px;
-                    --btn-height: 87px;
-                    --btn-padding: 6px 8px;
-                    --btn-radius: 10px;
+                    --btn-width: 112px;
+                    --btn-height: 62px;
+                    --btn-padding: 4px 6px;
+                    --btn-radius: 8px;
                     --btn-texto-height: auto;
-                    --btn-font-size: 20px;
+                    --btn-font-size: 13px;
                     --btn-font-weight: 400;
                     --btn-line-height: 1.15;
+                }
+
+                /* Respaldo por si dejaste el <button class="btn-descargar"> original */
+                .btn-descargar {
+                    width: 112px;
+                    height: 62px;
+                    border-radius: 8px;
+                    padding: 4px 6px;
+                    border: none;
+                    background-color: #628ECB;
+                    color: #FFFFFF;
+                    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+                    font-size: 13px;
+                    font-weight: 400;
+                    line-height: 1.15;
+                    text-align: center;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: background-color 300ms ease-out;
+                }
+
+                .btn-descargar:hover:not(:disabled) {
+                    background-color: #395886;
+                }
+
+                .btn-descargar:disabled {
+                    background-color: #D5DEEC;
+                    color: #395886;
+                    cursor: wait;
                 }
 
                 @media (max-width: 720px) {
                     .tarjeta {
                         flex-direction: column;
                         align-items: flex-start;
-                        padding: 16px;
-                    }
-
-                    .titulo {
-                        font-size: 20px;
-                    }
-
-                    .detalle {
-                        font-size: 16px;
                     }
 
                     .acciones {
@@ -127,17 +150,16 @@ class TarjetaMateria extends HTMLElement {
                         flex-wrap: wrap;
                     }
 
-                    .badge-estatus {
-                        font-size: 16px;
-                        height: 36px;
-                        width: 115px;
-                    }
-
                     boton-accion {
                         --btn-width: auto;
-                        --btn-height: 52px;
-                        --btn-padding: 8px 14px;
-                        --btn-font-size: 16px;
+                        --btn-height: 40px;
+                        --btn-padding: 6px 12px;
+                    }
+
+                    .btn-descargar {
+                        width: auto;
+                        height: 40px;
+                        padding: 6px 12px;
                     }
                 }
             </style>

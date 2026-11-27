@@ -77,16 +77,18 @@ class MiCalendario extends HTMLElement {
         this.shadowRoot.innerHTML = `
             <style>
                 :host {
-                    display: inline-block;
+                    display: block;
+                    width: 100%;
                 }
 
                 .calendario {
                     box-sizing: border-box;
-                    width: 672px;
-                    height: 702px;
+                    width: 468px;
+                    max-width: 100%;
+                    height: 468px;
                     border-radius: 12px;
                     background: #E2E7EF;
-                    padding: 22px 34px 28px 34px;
+                    padding: 20px 24px 22px 24px;
                     display: flex;
                     flex-direction: column;
                 }
@@ -96,37 +98,67 @@ class MiCalendario extends HTMLElement {
                     text-align: center;
                     color: #000000;
                     font-family: 'Inter', sans-serif;
-                    font-size: 28.437px;
+                    font-size: 22px;
                     font-style: normal;
                     font-weight: 700;
-                    line-height: 45.5px; /* 160% */
+                    line-height: 1.3;
                 }
 
                 .dias-semana {
-                    margin-top: 60.5px; /* 22px + 45.5px + 60.5px = 128px desde el borde superior */
+                    margin-top: 22px;
                     display: grid;
-                    grid-template-columns: repeat(7, 73px);
-                    column-gap: 15.5px;
-                    justify-content: center;
+                    grid-template-columns: repeat(7, minmax(0, 1fr));
+                    column-gap: 9px;
                 }
 
                 .dia-semana-label {
                     text-align: center;
                     color: #000000;
                     font-family: 'Inter', sans-serif;
-                    font-size: 28.437px;
+                    font-size: 16px;
                     font-style: normal;
                     font-weight: 400;
-                    line-height: 45.5px; /* 160% */
+                    line-height: 1.4;
                 }
 
                 .cuadricula-dias {
-                    margin-top: 28px;
+                    margin-top: 14px;
                     display: grid;
-                    grid-template-columns: repeat(7, 73px);
-                    column-gap: 15.5px;
-                    row-gap: 18px;
-                    justify-content: center;
+                    grid-template-columns: repeat(7, minmax(0, 1fr));
+                    column-gap: 9px;
+                    row-gap: 11px;
+                }
+
+                @media (max-width: 1100px) {
+                    .calendario {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                @media (max-width: 640px) {
+                    .calendario {
+                        padding: 16px 12px 18px;
+                    }
+
+                    .mes-titulo {
+                        font-size: 18px;
+                    }
+
+                    .dias-semana {
+                        margin-top: 14px;
+                        column-gap: 6px;
+                    }
+
+                    .dia-semana-label {
+                        font-size: 12.5px;
+                    }
+
+                    .cuadricula-dias {
+                        margin-top: 10px;
+                        column-gap: 6px;
+                        row-gap: 8px;
+                    }
                 }
             </style>
 

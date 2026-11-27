@@ -52,14 +52,13 @@ class PortalHeader extends HTMLElement {
 
                 .header-usuario {
                     width: 100%;
-                    min-height: 193.647px;
+                    min-height: 112px;
                     background: #395886;
                     color: #FFFFFF;
-                    padding: 20px 32px;
+                    padding: 14px 28px;
                     display: flex;
                     align-items: center;
-                    flex-wrap: wrap;
-                    gap: 32px;
+                    gap: 24px;
                 }
 
                 .identidad {
@@ -69,7 +68,7 @@ class PortalHeader extends HTMLElement {
                 }
 
                 .logo-facultad {
-                    height: 110px;
+                    height: 68px;
                     width: auto;
                     display: block;
                 }
@@ -77,37 +76,91 @@ class PortalHeader extends HTMLElement {
                 .datos-grid {
                     display: flex;
                     align-items: center;
-                    flex-wrap: wrap;
-                    gap: 32px;
+                    gap: 24px;
                     flex: 1;
+                    min-width: 0;
                     color: #FFFFFF;
                     font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-                    font-size: 20px;
-                    font-style: normal;
+                    font-size: 14px;
                     font-weight: 400;
-                    line-height: normal;
+                    line-height: 1.4;
                 }
 
                 .foto-perfil {
-                    height: 110px;
+                    height: 70px;
                     width: auto;
                     display: block;
                     flex-shrink: 0;
                 }
 
+                .datos-texto {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+                    gap: 6px 24px;
+                    min-width: 0;
+                }
+
                 .datos-columna {
                     display: flex;
                     flex-direction: column;
-                    gap: 4px;
+                    gap: 2px;
                 }
 
                 .datos-grid strong {
                     color: #FFFFFF;
-                    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-                    font-size: 20px;
-                    font-style: normal;
                     font-weight: 600;
-                    line-height: normal;
+                }
+
+                /* Tablet: una sola columna de datos junto a la foto */
+                @media (max-width: 1024px) {
+                    .header-usuario {
+                        padding: 12px 18px;
+                        gap: 16px;
+                        min-height: 100px;
+                    }
+
+                    .logo-facultad {
+                        height: 58px;
+                    }
+
+                    .foto-perfil {
+                        height: 68px;
+                    }
+
+                    .datos-grid {
+                        gap: 14px;
+                        font-size: 12px;
+                        line-height: 1.35;
+                    }
+
+                    .datos-texto {
+                        flex-direction: column;
+                        gap: 2px;
+                    }
+                }
+
+                /* Celular: fila compacta sin desbordar */
+                @media (max-width: 640px) {
+                    .header-usuario {
+                        padding: 10px 12px;
+                        gap: 10px;
+                        min-height: auto;
+                    }
+
+                    .logo-facultad {
+                        height: 46px;
+                    }
+
+                    .foto-perfil {
+                        height: 54px;
+                    }
+
+                    .datos-grid {
+                        gap: 10px;
+                        font-size: 9.5px;
+                        line-height: 1.3;
+                    }
                 }
             </style>
 
@@ -119,16 +172,18 @@ class PortalHeader extends HTMLElement {
                 <div class="datos-grid">
                     <img id="foto-perfil" class="foto-perfil" alt="Foto de Perfil" />
 
-                    <div class="datos-columna">
-                        <div>NOMBRE ALUMNO: <strong id="dato-nombre"></strong></div>
-                        <div>ID: <strong id="dato-id"></strong></div>
-                    </div>
+                    <div class="datos-texto">
+                        <div class="datos-columna">
+                            <div>NOMBRE ALUMNO: <strong id="dato-nombre"></strong></div>
+                            <div>ID: <strong id="dato-id"></strong></div>
+                        </div>
 
-                    <div class="datos-columna">
-                        <div>PROMEDIO GENERAL: <strong id="dato-promedio"></strong></div>
-                        <div>CRÉDITOS ACUMULADOS: <strong id="dato-creditos"></strong></div>
-                        <div>ESTATUS DE INSCRIPCIÓN DEL PERIODO ACTUAL: <strong id="dato-estatus"></strong></div>
-                        <div>PORCENTAJE DE AVANCE: <strong id="dato-avance"></strong></div>
+                        <div class="datos-columna">
+                            <div>PROMEDIO GENERAL: <strong id="dato-promedio"></strong></div>
+                            <div>CRÉDITOS ACUMULADOS: <strong id="dato-creditos"></strong></div>
+                            <div>ESTATUS DE INSCRIPCIÓN DEL PERIODO ACTUAL: <strong id="dato-estatus"></strong></div>
+                            <div>PORCENTAJE DE AVANCE: <strong id="dato-avance"></strong></div>
+                        </div>
                     </div>
                 </div>
             </header>

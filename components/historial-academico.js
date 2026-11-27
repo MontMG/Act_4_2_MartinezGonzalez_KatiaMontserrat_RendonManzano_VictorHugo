@@ -36,15 +36,15 @@ class HistorialAcademico extends HTMLElement {
 
                 .tarjeta {
                     width: 100%;
-                    max-width: 633px;
-                    min-height: 63px;
-                    border-radius: 8px;
+                    max-width: 480px;
+                    min-height: 44px;
+                    border-radius: 6px;
                     background-color: #B9B9B9;
-                    padding: 8px 14px;
+                    padding: 6px 12px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
-                    gap: 4px;
+                    gap: 2px;
                     font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
                 }
 
@@ -52,14 +52,14 @@ class HistorialAcademico extends HTMLElement {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    gap: 12px;
+                    gap: 10px;
                 }
 
                 .materia,
                 .periodo {
-                    font-size: 20px;
+                    font-size: 13.5px;
                     font-weight: 600;
-                    line-height: 1.15;
+                    line-height: 1.2;
                     color: #000000;
                 }
 
@@ -69,9 +69,9 @@ class HistorialAcademico extends HTMLElement {
                 }
 
                 .profesor {
-                    font-size: 20px;
+                    font-size: 12.5px;
                     font-weight: 400;
-                    line-height: 1.15;
+                    line-height: 1.2;
                     color: #000000;
                 }
 
@@ -80,12 +80,6 @@ class HistorialAcademico extends HTMLElement {
                         flex-direction: column;
                         align-items: flex-start;
                         gap: 2px;
-                    }
-
-                    .materia,
-                    .periodo,
-                    .profesor {
-                        font-size: 16px;
                     }
                 }
             </style>

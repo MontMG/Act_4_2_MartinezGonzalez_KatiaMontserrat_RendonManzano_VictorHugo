@@ -104,17 +104,17 @@ class BarraNavegacion extends HTMLElement {
                     position: relative;
                     width: 100%;
                     background-color: #CCCCCC;
-                    padding: 10px 32px;
+                    padding: 8px 28px;
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    gap: 20px;
+                    gap: 16px;
                 }
 
                 .barra-acciones {
                     display: flex;
                     align-items: center;
-                    gap: 20px;
+                    gap: 16px;
                     flex-shrink: 0;
                 }
 
@@ -122,7 +122,7 @@ class BarraNavegacion extends HTMLElement {
                     position: relative;
                     background: transparent;
                     border: none;
-                    padding: 0;
+                    padding: 2px;
                     cursor: pointer;
                     display: inline-flex;
                     align-items: center;
@@ -131,15 +131,18 @@ class BarraNavegacion extends HTMLElement {
                 }
 
                 .btn-icono img {
+                    width: 26px;
+                    height: 26px;
+                    object-fit: contain;
                     display: block;
                 }
 
                 .punto-alerta {
                     position: absolute;
-                    top: -2px;
-                    right: -2px;
-                    width: 10px;
-                    height: 10px;
+                    top: -1px;
+                    right: -1px;
+                    width: 9px;
+                    height: 9px;
                     border-radius: 50%;
                     background-color: #DF0000;
                 }
@@ -151,9 +154,9 @@ class BarraNavegacion extends HTMLElement {
                 .modulo-avisos {
                     display: none;
                     position: absolute;
-                    top: calc(100% + 8px);
-                    right: 30px;
-                    width: 460px;
+                    top: calc(100% + 6px);
+                    right: 28px;
+                    width: 380px;
                     max-width: calc(100vw - 32px);
                     background-color: #FFFFFF;
                     border: 1px solid #CCCCCC;
@@ -169,9 +172,9 @@ class BarraNavegacion extends HTMLElement {
 
                 .modulo-avisos-titulo {
                     margin: 0;
-                    padding: 14px 16px;
+                    padding: 12px 14px;
                     font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-                    font-size: 16px;
+                    font-size: 15px;
                     font-weight: 600;
                     color: #000000;
                 }
@@ -179,8 +182,28 @@ class BarraNavegacion extends HTMLElement {
                 .modulo-avisos-lista {
                     display: flex;
                     flex-direction: column;
-                    gap: 8px;
-                    padding: 0 0 14px 0;
+                    gap: 6px;
+                    padding: 0 10px 12px;
+                }
+
+                @media (max-width: 640px) {
+                    .barra-menu {
+                        padding: 6px 12px;
+                        gap: 8px;
+                    }
+
+                    .barra-acciones {
+                        gap: 10px;
+                    }
+
+                    .btn-icono img {
+                        width: 22px;
+                        height: 22px;
+                    }
+
+                    .modulo-avisos {
+                        right: 12px;
+                    }
                 }
             </style>
 

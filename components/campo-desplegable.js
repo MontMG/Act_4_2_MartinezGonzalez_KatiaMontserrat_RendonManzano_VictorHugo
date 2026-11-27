@@ -69,8 +69,8 @@ class CampoDesplegable extends HTMLElement {
 
                 .caja-select {
                     width: 100%;
-                    min-height: 54px;
-                    padding: 14px 20px;
+                    min-height: 40px;
+                    padding: 8px 14px;
                     background-color: #FFFFFF;
                     border: 2px solid #714BBC;
                     border-radius: 5px;
@@ -115,7 +115,7 @@ class CampoDesplegable extends HTMLElement {
 
                 .opcion-item {
                     width: 100%;
-                    padding: 14px 13px 14px 11px;
+                    padding: 10px 12px;
                     background-color: #FFFFFF;
                     border-bottom: 1px solid #A8A8A8;
                     display: flex;
@@ -145,6 +145,11 @@ class CampoDesplegable extends HTMLElement {
                     height: 18px;
                     object-fit: contain;
                     flex-shrink: 0;
+                }
+                    
+                .texto-caja,
+                .opcion-item {
+                    font-size: 13.5px;
                 }
             </style>
 

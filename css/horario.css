@@ -18,11 +18,13 @@
 
 .tabla-horario {
     width: 100%;
+    min-width: 780px;
     border-collapse: separate;
     border-spacing: 8px;
     border: 1.5px solid #222222;
     background-color: #FFFFFF;
     font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    
 }
 
 .tabla-horario th,
@@ -46,6 +48,17 @@
     height: 82px;
     padding: 6px;
     background-color: #FFFFFF;
+}
+
+.tabla-horario td:last-child .tooltip-materia {
+    left: auto;
+    right: 0;
+    transform: none;
+}
+
+.tabla-horario tbody tr:first-child .tooltip-materia {
+    bottom: auto;
+    top: calc(100% + 8px);
 }
 
 .celda-hora {

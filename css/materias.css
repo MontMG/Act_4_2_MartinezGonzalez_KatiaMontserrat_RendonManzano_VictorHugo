@@ -1,55 +1,58 @@
+
 .materias-contenedor {
-    max-width: 1680px;
+    max-width: 1280px;
     width: 100%;
     margin: 0 auto;
-    padding: 24px 32px 48px;
+    padding: 16px 24px 32px;
 }
 
 .materias-titulo {
     font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 700;
     color: #111111;
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 18px;
 }
 
 .materias-layout {
     display: grid;
-    grid-template-columns: minmax(0, 936px) minmax(0, 681px);
+    grid-template-columns: minmax(0, 692px) minmax(0, 512px);
     justify-content: center;
-    align-items: start;
-    gap: 28px;
+    align-items: stretch;
+    gap: 22px;
     width: 100%;
 }
 
+/* Panel izquierdo */
 .columna-actuales {
     background-color: rgba(177, 201, 239, 0.2);
-    border-radius: 12px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.columna-historial {
-    background: #FFFFFF;
-    border-radius: 12px;
-    padding: 20px 24px 24px;
+    border-radius: 10px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     gap: 14px;
 }
 
-.historial-cabecera {
+/* Panel derecho */
+.columna-historial {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 14px 16px 16px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+.historial-cabecera {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 .historial-subtitulo {
     font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    font-size: 22px;
+    font-size: 16px;
     font-weight: 600;
     color: #111111;
 }
@@ -57,19 +60,19 @@
 .lista-historial {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 }
 
-@media (max-width: 1180px) {
+@media (max-width: 980px) {
     .materias-layout {
         grid-template-columns: 1fr;
-        max-width: 936px;
+        max-width: 692px;
         margin: 0 auto;
-        gap: 32px;
+        gap: 24px;
     }
 
     .columna-historial {
-        max-width: 681px;
+        max-width: 512px;
         width: 100%;
         margin: 0 auto;
     }
@@ -77,20 +80,16 @@
 
 @media (max-width: 600px) {
     .materias-contenedor {
-        padding: 16px 16px 36px;
+        padding: 14px 14px 28px;
     }
 
     .materias-titulo {
-        font-size: 22px;
-        margin-bottom: 20px;
+        font-size: 19px;
+        margin-bottom: 14px;
     }
 
     .columna-actuales,
     .columna-historial {
-        padding: 16px;
-    }
-
-    .historial-subtitulo {
-        font-size: 18px;
+        padding: 12px;
     }
 }

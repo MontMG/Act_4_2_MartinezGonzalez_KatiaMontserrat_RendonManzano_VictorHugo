@@ -103,25 +103,24 @@ class TarjetaNotificacion extends HTMLElement {
             <style>
                 :host {
                     display: block;
-                    width: 616px;
-                    max-width: 100%;
+                    width: 100%;
                 }
 
                 .tarjeta {
                     box-sizing: border-box;
                     display: flex;
                     width: 100%;
-                    padding: 16px;
+                    padding: 10px 12px;
                     align-items: flex-start;
-                    gap: 16px;
+                    gap: 10px;
                     border-radius: 6px;
                     font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
                     transition: background-color 200ms ease, color 200ms ease;
                 }
 
                 .icono {
-                    width: 24px;
-                    height: 24px;
+                    width: 20px;
+                    height: 20px;
                     flex-shrink: 0;
                     display: block;
                 }
@@ -130,21 +129,21 @@ class TarjetaNotificacion extends HTMLElement {
                     display: flex;
                     flex-wrap: wrap;
                     align-items: baseline;
-                    gap: 12px;
+                    gap: 8px;
                     flex: 1;
                     min-width: 0;
-                    line-height: 24px;
+                    line-height: 1.35;
                 }
 
                 .texto {
                     margin: 0;
-                    font-size: 16px;
+                    font-size: 13.5px;
                     font-weight: 400;
                 }
 
                 .enlace-accion {
                     display: none;
-                    font-size: 16px;
+                    font-size: 13.5px;
                     font-style: italic;
                     font-weight: 400;
                     text-decoration: underline;
@@ -156,21 +155,18 @@ class TarjetaNotificacion extends HTMLElement {
                     display: inline;
                 }
 
-                /* ===== TIPO: informativa ===== */
                 .tarjeta.informativa {
                     background: rgba(0, 117, 202, 0.24);
                     color: #025BAB;
                     cursor: pointer;
                 }
 
-                /* ===== TIPO: accion ===== */
                 .tarjeta.accion {
                     background: rgba(217, 130, 0, 0.24);
                     color: #806B00;
                     cursor: pointer;
                 }
 
-                /* ===== TIPO: leido ===== */
                 .tarjeta.leido {
                     background: rgba(112, 115, 118, 0.24);
                     color: #434343;

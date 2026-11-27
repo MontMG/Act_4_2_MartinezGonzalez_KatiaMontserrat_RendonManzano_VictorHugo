@@ -93,8 +93,8 @@ class ListaEventos extends HTMLElement {
         this.shadowRoot.innerHTML = `
             <style>
                 :host {
-                    display: inline-block;
-                    max-width: 100%;
+                    display: block; 
+                    width: 100%;
                 }
 
                 *, *::before, *::after {
@@ -102,9 +102,9 @@ class ListaEventos extends HTMLElement {
                 }
 
                 .contenedor-eventos {
-                    width: 637.274px;
+                    width: 440px;
                     max-width: 100%;
-                    height: 702px;
+                    height: 468px;
                     border-radius: 12px;
                     border: 3px solid #DF0000;
                     background: #DBD8D8;
@@ -114,11 +114,11 @@ class ListaEventos extends HTMLElement {
                 }
 
                 .eventos-titulo {
-                    margin: 21px 0 0 0;
+                    margin: 16px 0 0 0;
                     text-align: center;
                     color: #540A0A;
                     font-family: 'Inter', sans-serif;
-                    font-size: 26px;
+                    font-size: 20px;
                     font-style: normal;
                     font-weight: 600;
                     line-height: normal;
@@ -126,26 +126,26 @@ class ListaEventos extends HTMLElement {
                 }
 
                 .lista-eventos {
-                    margin-top: 20px;
-                    padding: 0 44.27px 25px 44px;
+                    margin-top: 14px;
+                    padding: 0 20px 18px 20px;
                     display: flex;
                     flex-direction: column;
-                    gap: 25px;
+                    gap: 12px;
                     flex: 1;
                     overflow-y: auto;
                 }
 
                 .tarjeta-evento {
-                    height: 95px;
+                    min-height: 68px;
                     flex-shrink: 0;
                     align-self: stretch;
                     border-radius: 8px;
                     background: #FFFFFF;
-                    padding: 14px 16px;
+                    padding: 10px 14px;
                     display: flex;
                     justify-content: space-between;
-                    align-items: flex-start;
-                    gap: 12px;
+                    align-items: center;
+                    gap: 10px;
                     cursor: pointer;
                 }
 
@@ -153,7 +153,7 @@ class ListaEventos extends HTMLElement {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
-                    gap: 4px;
+                    gap: 3px;
                     min-width: 0;
                 }
 
@@ -161,28 +161,27 @@ class ListaEventos extends HTMLElement {
                     margin: 0;
                     color: #000000;
                     font-family: 'Inter', sans-serif;
-                    font-size: 26px;
+                    font-size: 16px;
                     font-style: normal;
                     font-weight: 600;
-                    line-height: normal;
+                    line-height: 1.25;
                 }
 
                 .evento-lugar {
                     margin: 0;
                     color: #000000;
                     font-family: 'Inter', sans-serif;
-                    font-size: 26px;
+                    font-size: 14px;
                     font-style: normal;
                     font-weight: 300;
-                    line-height: normal;
+                    line-height: 1.25;
                 }
 
                 .evento-derecha {
                     display: flex;
                     flex-direction: column;
                     align-items: flex-end;
-                    gap: 6px;
-                    padding-top: 4px;
+                    gap: 4px;
                     flex-shrink: 0;
                 }
 
@@ -190,12 +189,55 @@ class ListaEventos extends HTMLElement {
                 .evento-hora {
                     color: #000000;
                     font-family: 'Inter', sans-serif;
-                    font-size: 18px;
+                    font-size: 12.5px;
                     font-style: normal;
                     font-weight: 300;
-                    line-height: normal;
+                    line-height: 1.2;
                     text-align: right;
                     white-space: nowrap;
+                }
+                @media (max-width: 1100px) {
+                    .contenedor-eventos {
+                        width: 100%;
+                        height: 440px;
+                    }
+                }
+
+                @media (max-width: 640px) {
+                    .contenedor-eventos {
+                        width: 100%;
+                        height: 380px;
+                        border-width: 2px;
+                    }
+
+                    .eventos-titulo {
+                        font-size: 17px;
+                        margin-top: 12px;
+                    }
+
+                    .lista-eventos {
+                        margin-top: 10px;
+                        padding: 0 12px 14px;
+                        gap: 10px;
+                    }
+
+                    .tarjeta-evento {
+                        min-height: 58px;
+                        padding: 10px 12px;
+                    }
+
+                    .evento-nombre {
+                        font-size: 14px;
+                    }
+
+                    .evento-lugar {
+                        font-size: 12.5px;
+                    }
+
+                    .evento-fecha,
+                    .evento-hora {
+                        font-size: 11px;
+                    }
                 }
             </style>
 

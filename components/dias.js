@@ -56,50 +56,59 @@ class DiaCalendario extends HTMLElement {
         this.shadowRoot.innerHTML = `
             <style>
                 :host {
-                    display: inline-block;
+                    display: block;
+                    width: 100%;
                 }
 
                 .dia {
                     box-sizing: border-box;
                     display: flex;
-                    width: 73px;
-                    height: 80px;
-                    padding: 9.479px;
+                    width: 100%;
+                    height: 54px;
+                    padding: 6px;
                     justify-content: center;
                     align-items: center;
-                    gap: 9.479px;
-                    border-radius: 9.479px;
+                    border-radius: 8px;
                     user-select: none;
                     border: none;
                 }
 
                 .numero {
                     font-family: 'Inter', sans-serif;
-                    font-size: 28.437px;
+                    font-size: 18px;
                     font-style: normal;
                     font-weight: 400;
-                    line-height: 45.5px; /* 160% */
+                    line-height: 1;
                 }
 
-                /* Variante: normal */
                 .dia.normal {
                     background: #FFFFFF;
                     color: #000000;
                     cursor: default;
                 }
 
-                /* Variante: evento */
                 .dia.evento {
                     background: #467FCF;
                     color: #000000;
                     cursor: pointer;
                 }
 
-                /* Variante: seleccionado */
                 .dia.seleccionado {
                     background: #44638E;
                     color: #FFFFFF;
                     cursor: default;
+                }
+
+                @media (max-width: 640px) {
+                    .dia {
+                        height: 40px;
+                        padding: 4px;
+                        border-radius: 6px;
+                    }
+
+                    .numero {
+                        font-size: 14px;
+                    }
                 }
             </style>
             <div class="dia normal">

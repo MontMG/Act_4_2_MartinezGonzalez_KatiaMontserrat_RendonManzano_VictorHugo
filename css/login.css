@@ -99,7 +99,7 @@ body {
     }
 
     .header-titulo {
-        font-size: 1.5rem;
+        font-size: 3rem;
         line-height: 1.2;
     }
 
@@ -125,10 +125,10 @@ body {
 
 @media (max-width: 500px) {
     .header-titulo {
-        font-size: 1.15rem;
+        font-size: 1.5rem;
     }
 
     .login-titulo {
-        font-size: 1.65rem;
+        font-size: 3rem;
     }
 }
